@@ -12,7 +12,7 @@ def play(player1, player2):
         if player1 == player2:
             return "It's a tie"
 
-        elif player1 != elements.get(player2):
+        elif player2 == elements.get(player1):
             return "player1 wins"
 
         else:
@@ -21,4 +21,4 @@ def play(player1, player2):
         return "Invalid choice"
 
 
-print(play("spock", "scissor"))
+print(play("rock", "paper"))
