@@ -1,5 +1,4 @@
 def play(player1, player2):
-
     elements = {
         "rock": ["paper", "spock"],
         "paper": ["scissors", "lizard"],
@@ -8,17 +7,17 @@ def play(player1, player2):
         "spock": ["paper", "lizard"]
     }
 
-    if player1 in elements.keys() or player2 in elements.keys():
-        if player1 == player2:
-            return "It's a tie"
-
-        elif player2 == elements.get(player1):
-            return "player1 wins"
-
-        else:
-            return "player2 wins"
-    else:
+    if player1 not in elements or player2 not in elements:
         return "Invalid choice"
 
+    if player1 == player2:
+        return "It's a tie"
 
-print(play("rock", "paper"))
+    if player1 in elements[player2]:
+        return "player2 wins"
+    else:
+        return "player1 wins"
+
+
+print(play("num", "rock"))  # Invalid choice
+
